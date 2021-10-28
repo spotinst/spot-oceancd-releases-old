@@ -60,6 +60,8 @@ spec:
                secretKeyRef:
                  name: spot-oceancd-controller-token
                  key: token
+           - name: SAAS_URL
+             value: https://cluster-gateway.oceancd-dev.com
            - name: NODE_NAME
              valueFrom:
                fieldRef:
