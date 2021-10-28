@@ -4,6 +4,7 @@ metadata:
   name: "controller.oceancd.spot.io"
 webhooks:
   - name: "controller.oceancd.spot.io"
+    failurePolicy: Ignore
     rules:
       - apiGroups: ["apps"]
         apiVersions: ["v1"]
