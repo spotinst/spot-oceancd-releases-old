@@ -51,7 +51,7 @@ spec:
       containers:
       - name: spot-oceancd-controller
         imagePullPolicy: Always
-        image: spotinst/spot-oceancd-controller:0.1.0
+        image: spotinst/spot-oceancd-controller:0.1.0 
         ports:
         - containerPort: 8000
         env:
