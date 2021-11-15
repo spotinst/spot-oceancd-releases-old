@@ -18,14 +18,12 @@ https://spot.io/products/ocean-cd
 ## Getting Started
 
 ```console
-chmod +x oceancdGetStarted.py
+chmod +x oceancd_baker.py
 
-python3 oceancdGetStarted.py -h
-usage: oceancdGetStarted [-h] -t TOKEN -e ENVIRONMENT_NAME -c CLUSTER_ID -m
-                         MICROSERVICE_NAME -l [LABELS [LABELS ...]]
-                         [-n NOTIFICATION_PROVIDER] [-w WEBHOOK]
+./oceancd_baker.py -h
+usage: oceancd_baker [-h] -t TOKEN -e ENVIRONMENT_NAME -c CLUSTER_ID -m MICROSERVICE_NAME -l [LABELS [LABELS ...]] [-n NOTIFICATION_PROVIDER] [-w WEBHOOK]
 
-oceancdGetStarted
+oceancd_baker
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -38,11 +36,9 @@ optional arguments:
   -m MICROSERVICE_NAME, --microservice_name MICROSERVICE_NAME
                         Microservice name
   -l [LABELS [LABELS ...]], --labels [LABELS [LABELS ...]]
-                        Set of k8s labels that are exisitng on the wanted
-                        workload
+                        Set of k8s labels that are exisitng on the wanted workload
   -n NOTIFICATION_PROVIDER, --notification_provider NOTIFICATION_PROVIDER
-                        The name identifier of the Ocean CD notification
-                        provider
+                        The name identifier of the Ocean CD notification provider
   -w WEBHOOK, --webhook WEBHOOK
                         Webhook url
 
