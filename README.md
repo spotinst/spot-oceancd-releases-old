@@ -47,7 +47,7 @@ optional arguments:
                         Webhook url
 
  example:
-    python3 oceancdGetStarted.py -t 1234 -e test-environment -c test-cluster -m test-microservice -l app=test -n test-notification -w https://webhook.site
+    ./oceancd_baker.py -t 1234 -e test-environment -c test-cluster -m test-microservice -l app=test -n test-notification -w https://webhook.site
 ```
 
 ## Documentation

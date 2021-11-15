@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import argparse
 import json
 import logging
@@ -101,10 +102,10 @@ if __name__ == "__main__":
                         datefmt='%Y-%m-%d %H:%M:%S',)
     logger = logging.getLogger(__name__)
     example_text = ''' example:
-    python3 oceancdGetStarted.py -t 1234 -e test-environment -c test-cluster -m test-microservice -l app=test -n test-notification -w https://webhook.site
+    ./oceancd_baker.py -t 1234 -e test-environment -c test-cluster -m test-microservice -l app=test -n test-notification -w https://webhook.site
     '''
-    parser = argparse.ArgumentParser(prog='oceancdGetStarted',
-                                     description='oceancdGetStarted',
+    parser = argparse.ArgumentParser(prog='oceancd_baker',
+                                     description='oceancd_baker',
                                      epilog=example_text,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("-t", "--token", type=str,
