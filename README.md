@@ -1,4 +1,4 @@
-# Spot OceanCD
+# Spot Ocean CD (private preview)
 
 Ocean CD makes Kubernetes an afterthought for application teams. Commit code and Ocean CD takes care of operations, automation and monitoring to ensure SLOs and production health.
 
@@ -7,15 +7,33 @@ https://spot.io/products/ocean-cd
 ## Table of Contents
 
 - [Installation](#installation)
-- [Getting Started](#getting-started)
-- [Documentation](#documentation)
-- [Getting Help](#getting-help)
-- [Community](#community)
+- [Quick Start](#quick-start)
 
 ## Installation
 
+Prerequisites:
+- Kubernetes cluster up and running
+- Workstation with the Kubernetes cluster context and kubectl installed
+- [A Spot API token](https://docs.spot.io/administration/api/create-api-token)
 
-## Getting Started
+**Note: Please contact Ocean CD team to get a private preview access, for installing Ocean CD controller and for full documentation.**
+
+After installing the Ocean CD controller in your cluster, you will create the following Ocean CD entities:
+- Environment
+- Microservice
+- Notification Provider
+- Rollout Spec
+
+## Quick Start
+
+For quick start you can use [oceancd_baker](oceancd_baker.py) script to create a basic configuration. (That you can easily modified later via API)
+
+Use any 'Example' deployment YAML (which is installed in your connected cluster) to get a quick overview of Ocean CD capabilities.
+
+Run the following commands on your local machine:
+- wget https://raw.githubusercontent.com/spotinst/spot-oceancd-releases/main/oceancd_baker.py
+- pip3 install requests (if not already installed)
+- chmod +x oceancd_baker.py
 
 ```console
 chmod +x oceancd_baker.py
@@ -46,20 +64,9 @@ optional arguments:
     ./oceancd_baker.py -t 1234 -e test-environment -c test-cluster -m test-microservice -l app=test -n test-notification -w https://webhook.site
 ```
 
-## Documentation
+Expected outcome:
+- Confirmation has been received, Ocean CD entities has been created.
+- You can now run your 'Example' deployment (make sure to do some changes in the spec template to demonstrate the update), and see Ocean CD in action!
 
-If you're new to Spot and want to get started, please checkout our [Getting Started](https://help.spot.io/getting-started-with-spotinst/) guide, available on the [Spot Documentation](https://help.spot.io/) website.
-
-
-## Getting Help
-
-We use GitHub issues for tracking bugs and feature requests. Please use these community resources for getting help:
-
-- Ask a question on [Stack Overflow](https://stackoverflow.com/).
-- Join our Spot community on [Slack](http://slack.spot.io/).
-- Open an [issue](https://github.com/spotinst/spot-oceancd-releases/issues/new/choose/).
-
-## Community
-
-- [Slack](http://slack.spot.io/)
-- [Twitter](https://twitter.com/spot_hq/)
+You can use the getting started script to create more rollout objects,
+or go to Spot API documentation and use your favorite API tool.
