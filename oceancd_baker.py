@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 import argparse
-import json
 import logging
-from urllib import request
-from urllib.error import URLError, HTTPError
+import requests
 
 
 class ParseKwargs(argparse.Action):
@@ -21,18 +19,12 @@ class CreateEntities:
         self.header = {"Authorization": "Bearer {}".format(token)}
 
     def create_entity(self, url, body):
-        req = request.Request(url=url, data=body, headers=self.header)
-        req.add_header('Content-Type', 'application/json; charset=utf-8')
-        jsondata = json.dumps(body)
-        jsondataasbytes = jsondata.encode('utf-8')  # needs to be bytes
+        response = requests.post(url=url, json=body,
+                                 headers=self.header, timeout=30)
         try:
-            response = request.urlopen(req, jsondataasbytes, timeout=30)
-        except HTTPError as e:
-            # do something
-            raise SystemExit(e.read().decode('utf8'))
-        except URLError as e:
-            # do something (set req to blank)
-            raise SystemExit(e)
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            raise SystemExit(response.json())
 
     def create_environment(self, env_name, cluster_id):
         logger.info("create environment entity")
