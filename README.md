@@ -17,6 +17,38 @@ https://spot.io/products/ocean-cd
 
 ## Getting Started
 
+```console
+chmod +x oceancdGetStarted.py
+
+python3 oceancdGetStarted.py -h
+usage: oceancdGetStarted [-h] -t TOKEN -e ENVIRONMENT_NAME -c CLUSTER_ID -m
+                         MICROSERVICE_NAME -l [LABELS [LABELS ...]]
+                         [-n NOTIFICATION_PROVIDER] [-w WEBHOOK]
+
+oceancdGetStarted
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -t TOKEN, --token TOKEN
+                        Api token to spot api
+  -e ENVIRONMENT_NAME, --environment_name ENVIRONMENT_NAME
+                        Environment name
+  -c CLUSTER_ID, --cluster_id CLUSTER_ID
+                        Cluster id for environment
+  -m MICROSERVICE_NAME, --microservice_name MICROSERVICE_NAME
+                        Microservice name
+  -l [LABELS [LABELS ...]], --labels [LABELS [LABELS ...]]
+                        Set of k8s labels that are exisitng on the wanted
+                        workload
+  -n NOTIFICATION_PROVIDER, --notification_provider NOTIFICATION_PROVIDER
+                        The name identifier of the Ocean CD notification
+                        provider
+  -w WEBHOOK, --webhook WEBHOOK
+                        Webhook url
+
+ example:
+    python3 oceancdGetStarted.py -t 1234 -e test-environment -c test-cluster -m test-microservice -l app=test -n test-notification -w https://webhook.site
+```
 
 ## Documentation
 
