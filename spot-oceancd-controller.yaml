@@ -48,6 +48,10 @@ spec:
       labels:
         app: spot-oceancd-controller
     spec:
+      securityContext:
+        fsGroup: 2000
+        runAsNonRoot: true
+        runAsUser: 1000
       containers:
       - name: spot-oceancd-controller
         imagePullPolicy: Always
