@@ -1,13 +1,11 @@
 
-token: "1c5e9e7ec21020c26f2723e51739a18855c5a76a18b66e26fe17e01a826ec43e"
+token: ""
 
 saasUrl: https://operator.oceancd.io
 
 apiUrl: https://api.spotinst.io
 
-caBundle: ""
-
-clusterId: "daniel-cluster-test-operator"
+clusterId: ""
 
 podAnnotations: {}
 
@@ -17,10 +15,9 @@ tolerations: []
 
 affinity: {}
 
-channel: "stable"
-
 resources:
   limits:
     memory: "128Mi"
     cpu: "500m"
     
+channel: "stable"
