@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: spot-oceancd-controller-cabundle-inject
+  labels:
+    app: spot-oceancd-controller-cabundle-inject
+    {{- include "spot-oceancd-controller.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": post-install
+    "helm.sh/hook-weight": "5"
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    spec:
+      serviceAccountName: spot-oceancd-controller-installer-service-account
+      containers:
+        - name: spot-oceancd-controller-cabundle-inject
+          image: bitnami/kubectl
+          imagePullPolicy: Always
+          command:
+            - "bin/sh"
+            - "-c"
+            - "caBundle=$(base64 < /run/secrets/kubernetes.io/serviceaccount/ca.crt  | tr -d '\n'); kubectl patch MutatingWebhookConfiguration controller.oceancd.spot.io -p '{\"webhooks\":[{\"name\": \"controller.oceancd.spot.io\",\"clientConfig\": {\"caBundle\": \"'${caBundle}'\"}}]}'"
+      restartPolicy: Never
+  backoffLimit: 1
