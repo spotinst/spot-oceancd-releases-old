@@ -28,11 +28,11 @@ spec:
             - "--namespace"
             - {{ .Release.Namespace }}
             - "--token"
-            - {{ .Values.token }}
+            - {{ .Values.token | required "Spot token is required"}}
             - "--apiurl"
             - {{ .Values.apiUrl }}
             - "--clusterId"
-            - {{ .Values.clusterId }}
+            - {{ .Values.clusterId | required "Cluster ID is required"}}
             - "--saasurl"
             - {{ .Values.saasUrl }}
       restartPolicy: Never
