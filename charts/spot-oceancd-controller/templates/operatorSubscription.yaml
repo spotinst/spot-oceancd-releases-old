@@ -3,7 +3,7 @@ kind: Subscription
 metadata:
   name: spot-oceancd-operator-subscription
 spec:
-  channel: {{ .Values.caBundle }}
+  channel: {{ .Values.channel }}
   name: spot-oceancd-operator
   source: spot-oceancd-catalog
   sourceNamespace: {{ .Release.Namespace }}
