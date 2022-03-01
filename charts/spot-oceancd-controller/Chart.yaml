@@ -1,6 +1,0 @@
-apiVersion: v2
-name: spot-oceancd-controller
-description: A Helm chart for spot-oceancd-controller
-type: application
-version: 1.0.0
-appVersion: 1.0.0

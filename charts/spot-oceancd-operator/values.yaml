@@ -1,0 +1,33 @@
+
+# -- (Required) Spot Token
+token: ""
+
+# -- (Optional) Saas URL
+saasUrl: https://operator.oceancd.io
+
+# -- (Optional) Spot Api URL
+apiUrl: https://api.spotinst.io
+
+# -- (Required) Cluster ID
+clusterId: ""
+
+# -- (Optional) Pod annotations
+podAnnotations: {}
+
+# -- (Optional) Node selector
+nodeSelector: {}
+
+# -- (Optional) Tolerations for nodes that have taints on them
+tolerations: []
+
+# -- (Optional) Node affinity
+affinity: {}
+
+# -- (Optional) Resource requests and limits
+resources:
+  limits:
+    memory: "128Mi"
+    cpu: "500m"
+
+# -- (Optional) Operator Catalog channel
+channel: "stable"

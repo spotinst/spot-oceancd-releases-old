@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "spot-oceancd-controller.name" -}}
+{{- define "spot-oceancd-operator.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "spot-oceancd-controller.fullname" -}}
+{{- define "spot-oceancd-operator.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "spot-oceancd-controller.chart" -}}
+{{- define "spot-oceancd-operator.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "spot-oceancd-controller.labels" -}}
-helm.sh/chart: {{ include "spot-oceancd-controller.chart" . }}
-{{ include "spot-oceancd-controller.selectorLabels" . }}
+{{- define "spot-oceancd-operator.labels" -}}
+helm.sh/chart: {{ include "spot-oceancd-operator.chart" . }}
+{{ include "spot-oceancd-operator.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "spot-oceancd-controller.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "spot-oceancd-controller.name" . }}
+{{- define "spot-oceancd-operator.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "spot-oceancd-operator.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "spot-oceancd-controller.serviceAccountName" -}}
+{{- define "spot-oceancd-operator.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "spot-oceancd-controller.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "spot-oceancd-operator.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

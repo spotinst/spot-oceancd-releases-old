@@ -1,10 +1,10 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: spot-oceancd-controller-cabundle-inject
+  name: spot-oceancd-operator-cabundle-inject
   labels:
-    app: spot-oceancd-controller-cabundle-inject
-    {{- include "spot-oceancd-controller.labels" . | nindent 4 }}
+    app: spot-oceancd-operator-cabundle-inject
+    {{- include "spot-oceancd-operator.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": post-install
     "helm.sh/hook-weight": "5"
@@ -12,9 +12,9 @@ metadata:
 spec:
   template:
     spec:
-      serviceAccountName: spot-oceancd-controller-installer-service-account
+      serviceAccountName: spot-oceancd-operator-installer-service-account
       containers:
-        - name: spot-oceancd-controller-cabundle-inject
+        - name: spot-oceancd-operator-cabundle-inject
           image: bitnami/kubectl
           imagePullPolicy: Always
           command:

@@ -1,10 +1,10 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: spot-oceancd-controller-installer
+  name: spot-oceancd-operator-installer
   labels:
-    app: spot-oceancd-controller-installer
-    {{- include "spot-oceancd-controller.labels" . | nindent 4 }}
+    app: spot-oceancd-operator-installer
+    {{- include "spot-oceancd-operator.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-5"
@@ -12,19 +12,19 @@ metadata:
 spec:
   template:
     spec:
-      serviceAccountName: spot-oceancd-controller-installer-service-account
+      serviceAccountName: spot-oceancd-operator-installer-service-account
       containers:
-        - name: spot-oceancd-controller-installer
+        - name: spot-oceancd-operator-installer
           image: spotinst/spot-oceancd-controller-installer:helm
           imagePullPolicy: Always
           command: ["./installation.sh"]
           args:
             - "--service"
-            - "spot-oceancd-controller-svc"
+            - "spot-oceancd-operator-svc"
             - "--webhook"
             - "controller.oceancd.spot.io"
             - "--secret"
-            - "spot-oceancd-controller-tls"
+            - "spot-oceancd-operator-tls"
             - "--namespace"
             - {{ .Release.Namespace }}
             - "--token"

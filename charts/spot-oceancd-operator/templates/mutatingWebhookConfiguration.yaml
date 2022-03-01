@@ -14,7 +14,7 @@ webhooks:
     clientConfig:
       service:
         namespace: {{ .Release.Namespace }}
-        name: "spot-oceancd-controller-svc"
+        name: "spot-oceancd-operator-svc"
         path: "/mutate"
         port: 8000
       caBundle: ""

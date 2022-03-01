@@ -1,10 +1,10 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: spot-oceancd-controller-installer-role-binding
+  name: spot-oceancd-operator-installer-role-binding
   labels:
-    app: spot-oceancd-controller-installer
-    {{- include "spot-oceancd-controller.labels" . | nindent 4 }}
+    app: spot-oceancd-operator-installer
+    {{- include "spot-oceancd-operator.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": pre-install
     "helm.sh/hook-weight": "-6"
@@ -14,5 +14,5 @@ roleRef:
   name: cluster-admin
 subjects:
   - kind: ServiceAccount
-    name: spot-oceancd-controller-installer-service-account
+    name: spot-oceancd-operator-installer-service-account
     namespace: {{ .Release.Namespace }}
