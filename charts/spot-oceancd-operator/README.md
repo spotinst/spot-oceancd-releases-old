@@ -27,7 +27,7 @@ helm install my-release oceancd/spot-oceancd-operator \
 4. Uninstall `spot-oceancd-operator`:
 
 ```sh
-helm install my-release oceancd/spot-oceancd-operator 
+helm uninstall my-release 
 kubectl delete apiservices v1.packages.operators.coreos.com
 kubectl get csv -A | grep spot-oceancd-operator | awk '{system("kubectl delete csv " $2 " -n " $1)}'
 ```
