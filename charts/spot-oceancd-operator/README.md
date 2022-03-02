@@ -1,4 +1,39 @@
-# spot-oceancd-operator
+## Installation
+
+1. Add the OceanCD Helm chart repository:
+
+```sh
+helm repo add oceancd https://charts.oceancd.io
+```
+
+2. Update your local Helm chart repository cache:
+
+```sh
+helm repo update
+```
+
+3. Install `spot-oceancd-operator`:
+
+```sh
+helm install my-release oceancd/spot-oceancd-operator \
+  --set token=REDACTED \
+  --set clusterId=REDACTED \
+  # [...]
+```
+
+> NOTE: Please configure all required chart values using the `set` command line argument or a `values.yaml` file.
+
+
+4. Uninstall `spot-oceancd-operator`:
+
+```sh
+helm install my-release oceancd/spot-oceancd-operator 
+kubectl delete apiservices v1.packages.operators.coreos.com
+kubectl get csv -A | grep spot-oceancd-operator | awk '{system("kubectl delete csv " $2 " -n " $1)}'
+```
+
+## Values
+
 
 ![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
 
