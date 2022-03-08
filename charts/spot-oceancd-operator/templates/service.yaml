@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: spot-oceancd-controller-svc
   labels:
-    app: spot-oceancd-operator
+    app: spot-oceancd-controller
     {{- include "spot-oceancd-operator.labels" . | nindent 4 }}
 spec:
   selector:
-    app: spot-oceancd-operator
+    app: spot-oceancd-controller
   ports:
     -  name: web
        protocol: TCP

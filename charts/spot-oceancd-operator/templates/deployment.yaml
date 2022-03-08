@@ -9,7 +9,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: spot-oceancd-operator
+      app: spot-oceancd-controller
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -17,7 +17,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        app: spot-oceancd-operator
+        app: spot-oceancd-controller
         {{- include "spot-oceancd-operator.selectorLabels" . | nindent 8 }}
     spec:
       containers:
@@ -46,15 +46,15 @@ spec:
                 fieldRef:
                   fieldPath: metadata.name
           volumeMounts:
-            - name: spot-oceancd-operator-tls
+            - name: spot-oceancd-controller-tls
               mountPath: /tls
               readOnly: true
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
-        - name: spot-oceancd-operator-tls
+        - name: spot-oceancd-controller-tls
           secret:
-            secretName: spot-oceancd-operator-tls
+            secretName: spot-oceancd-controller-tls
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

@@ -20,11 +20,11 @@ spec:
           command: ["./installation.sh"]
           args:
             - "--service"
-            - "spot-oceancd-operator-svc"
+            - "spot-oceancd-controller-svc"
             - "--webhook"
             - "controller.oceancd.spot.io"
             - "--secret"
-            - "spot-oceancd-operator-tls"
+            - "spot-oceancd-controller-tls"
             - "--namespace"
             - {{ .Release.Namespace }}
             - "--token"
