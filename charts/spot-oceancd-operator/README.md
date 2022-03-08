@@ -1,18 +1,24 @@
 ## Installation
 
-1. Add the OceanCD Helm chart repository:
+1. Install OLM
+
+```sh
+curl -sL https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.20.0/install.sh | bash -s v0.20.0
+```
+
+2. Add the OceanCD Helm chart repository:
 
 ```sh
 helm repo add oceancd https://charts.oceancd.io
 ```
 
-2. Update your local Helm chart repository cache:
+3. Update your local Helm chart repository cache:
 
 ```sh
 helm repo update
 ```
 
-3. Install `spot-oceancd-operator`:
+4. Install `spot-oceancd-operator`:
 
 ```sh
 helm install my-release oceancd/spot-oceancd-operator \
@@ -24,12 +30,14 @@ helm install my-release oceancd/spot-oceancd-operator \
 > NOTE: Please configure all required chart values using the `set` command line argument or a `values.yaml` file.
 
 
-4. Uninstall `spot-oceancd-operator`:
+5. Uninstall `spot-oceancd-operator`:
 
 ```sh
 helm uninstall my-release 
-kubectl delete apiservices v1.packages.operators.coreos.com
 kubectl get csv -A | grep spot-oceancd-operator | awk '{system("kubectl delete csv " $2 " -n " $1)}'
+kubectl delete apiservices v1.packages.operators.coreos.com
+kubectl delete -f https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.20.0/crds.yaml
+kubectl delete -f https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.20.0/olm.yaml
 ```
 
 ## Values
