@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  oceancd-operator:
+  - apiVersion: v2
+    appVersion: 1.1.0
+    created: "2022-05-22T14:12:49.617212302Z"
+    description: A Helm chart for oceancd-operator
+    digest: 65dd92ba8f63a37f2e01cc029f51bc389ff503f237e82e06884470ecbf0b8a1d
+    name: oceancd-operator
+    type: application
+    urls:
+    - https://github.com/spotinst/spot-oceancd-releases/releases/download/oceancd-operator-1.1.0/oceancd-operator-1.1.0.tgz
+    version: 1.1.0
   spot-oceancd-controller:
   - apiVersion: v2
     appVersion: 1.0.0
