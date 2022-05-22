@@ -1,0 +1,11 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: spot-oceancd-catalog
+spec:
+  sourceType: grpc
+  image: spotinst/spot-oceancd-operator-catalog
+  publisher: spot.io
+  updateStrategy:
+    registryPoll:
+      interval: 30m

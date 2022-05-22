@@ -1,0 +1,4 @@
+1. Check pods is Running:
+    kubectl get pods -n {{ .Release.Namespace }}
+2. Watch your operator come up:
+    kubectl get csv -A

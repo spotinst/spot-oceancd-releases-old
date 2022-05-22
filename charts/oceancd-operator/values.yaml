@@ -1,0 +1,45 @@
+serviceAccount:
+  annotations: {}
+deployment:
+  # -- Additional command line arguments to pass to rollouts-controller.  A list of flags.
+  extraArgs: []
+
+  # -- Security Context to set on container level
+  containerSecurityContext: {}
+
+  # -- Resource limits and requests for the controller pods.
+  resources: {}
+  #  limits:
+  #    cpu: 100m
+  #    memory: 128Mi
+  #  requests:
+  #    cpu: 50m
+  #    memory: 64Mi
+
+  # -- Security Context to set on pod level
+  podSecurityContext:
+    runAsNonRoot: true
+
+  # -- [Node selector]
+  nodeSelector: {}
+
+  # -- [Tolerations] for use with node taints
+  tolerations: []
+
+  # -- Assign custom [affinity] rules to the deployment
+  affinity: {}
+
+# -- (Required) Spot Token
+token: ""
+
+# -- (Optional) Saas URL
+saasUrl: https://operator.oceancd.io
+
+# -- (Optional) Spot Api URL
+apiUrl: https://api.spotinst.io
+
+# -- (Required) Cluster ID
+clusterId: ""
+
+# -- (Optional) Operator Catalog channel
+channel: "stable"

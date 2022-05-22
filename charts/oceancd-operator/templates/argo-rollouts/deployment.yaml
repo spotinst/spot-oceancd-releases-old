@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/component: rollouts-controller
+    app.kubernetes.io/name: argo-rollouts
+    app.kubernetes.io/part-of: argo-rollouts
+  name: argo-rollouts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: argo-rollouts
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: argo-rollouts
+    spec:
+      containers:
+      - image: quay.io/argoproj/argo-rollouts:v1.2.1
+        imagePullPolicy: Always
+        args:
+        {{- with .Values.deployment.extraArgs }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /healthz
+            port: healthz
+          initialDelaySeconds: 30
+          periodSeconds: 20
+          successThreshold: 1
+          timeoutSeconds: 10
+        name: argo-rollouts
+        ports:
+        - containerPort: 8090
+          name: metrics
+        - containerPort: 8080
+          name: healthz
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /metrics
+            port: metrics
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 4
+        securityContext:
+          {{- toYaml .Values.deployment.containerSecurityContext | nindent 10 }}
+        resources:
+          {{- toYaml .Values.deployment.resources | nindent 10 }}
+      serviceAccountName: argo-rollouts
+      {{- if .Values.deployment.nodeSelector }}
+      nodeSelector:
+        {{- toYaml .Values.deployment.nodeSelector | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.deployment.podSecurityContext | nindent 8 }}
+      {{- if .Values.deployment.tolerations }}
+      tolerations:
+        {{- toYaml .Values.deployment.tolerations | nindent 8 }}
+      {{- end }}
+      {{- if .Values.deployment.affinity }}
+      affinity:
+        {{- toYaml .Values.deployment.affinity | nindent 8 }}
+      {{- end }}
