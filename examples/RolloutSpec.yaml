@@ -6,8 +6,8 @@ spotDeployment:
 strategy:
   name: Strategy-OceanCD
 traffic:
-  stableService: my-stable-service
-  canaryService: my-canary-service
+  stableService: rollouts-demo-stable
+  canaryService: rollouts-demo-canary
 failurePolicy:
   action: abort
 
