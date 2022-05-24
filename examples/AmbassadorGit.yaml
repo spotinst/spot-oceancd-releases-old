@@ -1,0 +1,7 @@
+strategy:
+    canary:
+      stableService: echo-stable
+      canaryService: echo-canary
+      trafficRouting:
+        ambassador:
+          mappings:
