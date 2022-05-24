@@ -1,4 +1,4 @@
-apiVersion: spot.io/alphav1
+apiVersion: spot.io/v1beta1
 kind: SpotDeployment
 metadata:
   name: nginx-deployment
