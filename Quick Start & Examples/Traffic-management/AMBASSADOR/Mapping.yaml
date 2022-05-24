@@ -1,0 +1,9 @@
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: echo
+spec:
+  resolver: endpoint
+  prefix: /nginx
+  rewrite: /nginx
+  service: rollouts-demo-stable:80

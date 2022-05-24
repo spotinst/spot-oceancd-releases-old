@@ -1,0 +1,16 @@
+--
+kind: RolloutSpec
+name: RolloutSpec-OceanCD
+spotDeployment:
+  clusterId: cluster-name
+  namespace: mynamespace
+  name: nginx-deployment
+strategy:
+  name: Strategy-OceanCD
+traffic:
+  canaryService: rollouts-demo-canary
+  stableService: rollouts-demo-stable
+  smi:
+    rootService: rollouts-demo-root
+failurePolicy:
+  action: abort

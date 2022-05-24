@@ -1,0 +1,6 @@
+{{- if .Values.argoRollouts.create }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argo-rollouts
+{{- end }}

@@ -1,0 +1,26 @@
+{
+  "strategy": {
+    "name": "Strategy-OceanCD",
+    "canary": {
+      "steps": [
+        {
+          "name": "My-first-phase",
+          "setWeight": 20,
+          "pause": {
+            "duration": "2m"
+          }
+        },
+        {
+          "setWeight": 40
+        },
+        {
+          "name": "third-phase",
+          "setWeight": 80,
+          "pause": {
+            "duration": "1m"
+          }
+        }
+      ]
+    }
+  }
+}
