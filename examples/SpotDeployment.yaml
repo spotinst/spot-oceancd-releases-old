@@ -1,7 +1,8 @@
-apiVersion: apps/v1
+apiVersion: spot.io/alphav1
 kind: SpotDeployment
 metadata:
   name: nginx-deployment
+  namespace: mynamespace
   labels:
     app: nginx
 spec:
