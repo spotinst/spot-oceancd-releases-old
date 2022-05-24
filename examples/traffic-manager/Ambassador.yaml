@@ -1,0 +1,8 @@
+  strategy:
+    canary:
+      stableService: rollouts-demo-stable
+      canaryService: rollouts-demo-canary
+      trafficRouting:
+        ambassador:
+          mappings:
+            - echo

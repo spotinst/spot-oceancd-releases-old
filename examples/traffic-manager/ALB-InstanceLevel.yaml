@@ -1,0 +1,12 @@
+strategy:
+    canary:
+      canaryService: rollouts-demo-canary
+      stableService: rollouts-demo-stable
+      trafficRouting:
+        alb:
+          stickinessConfig:
+            enabled: true
+            durationSeconds: 3600
+          ingress: rollouts-demo-ingress
+          servicePort: 80
+          rootService: rollouts-demo-root

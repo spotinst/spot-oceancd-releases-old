@@ -1,0 +1,13 @@
+strategy:
+    canary:
+      pingPong:
+        pingService: rollouts-demo-canary
+        pingService: rollouts-demo-stable
+      trafficRouting:
+        alb:
+          stickinessConfig:
+            enabled: true
+            durationSeconds: 3600
+          ingress: rollouts-demo-ingress
+          servicePort: 80
+          rootService: rollouts-demo-root  

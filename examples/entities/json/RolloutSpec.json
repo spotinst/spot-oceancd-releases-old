@@ -1,0 +1,20 @@
+{
+    "rolloutSpec": {
+                 "name":"RolloutSpec-OceanCD",
+                "spotDeployment": {
+                    "clusterId": "cluster-name",
+                    "namespace": "namespace",
+                    "name": "nginx-deployment"
+                },
+                "strategy": {
+                    "name": "Strategy-OceanCD"
+                },
+                "traffic": {
+                    "canaryService": "rollouts-demo-stable",
+                    "stableService": "rollouts-demo-canary"
+                },
+                "failurePolicy": {
+                    "action": "abort"
+                }
+            }
+}
