@@ -1,0 +1,12 @@
+strategy:
+    canary:
+      trafficRouting:
+        istio:
+          virtualServices:
+          - name: rollouts-demo-vsvc # At least one virtualService is required
+            routes:
+            - primary # At least one route is required
+          destinationRule:
+            name: rollout-destrule    # required
+            canarySubsetName: canary  # required
+            stableSubsetName: stable  # required
