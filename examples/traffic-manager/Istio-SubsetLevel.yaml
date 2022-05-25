@@ -1,12 +1,20 @@
+name: RolloutSpec-OceanCD
+spotDeployment:
+  clusterId: cluster-name
+  namespace: mynamespace
+  name: nginx-deployment
 strategy:
-    canary:
-      trafficRouting:
-        istio:
-          virtualServices:
-          - name: rollouts-demo-vsvc # At least one virtualService is required
-            routes:
-            - primary # At least one route is required
-          destinationRule:
-            name: rollout-destrule    # required
-            canarySubsetName: canary  # required
-            stableSubsetName: stable  # required
+  name: Strategy-OceanCD
+  canary:
+    trafficRouting:
+      istio:
+        virtualServices:
+        - name: rollouts-demo-vsvc # At least one virtualService is required
+          routes:
+          - primary # At least one route is required
+        destinationRule:
+          name: rollout-destrule    # required
+          canarySubsetName: canary  # required
+          stableSubsetName: stable  # required
+failurePolicy:
+  action: abort

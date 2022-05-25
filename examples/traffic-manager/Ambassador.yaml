@@ -1,8 +1,16 @@
-  strategy:
-    canary:
-      stableService: rollouts-demo-stable
-      canaryService: rollouts-demo-canary
-      trafficRouting:
-        ambassador:
-          mappings:
-            - echo
+name: RolloutSpec-OceanCD
+spotDeployment:
+  clusterId: cluster-name
+  namespace: mynamespace
+  name: nginx-deployment
+strategy:
+  name: Strategy-OceanCD
+  canary:
+    stableService: rollouts-demo-stable
+    canaryService: rollouts-demo-canary
+    trafficRouting:
+      ambassador:
+        mappings:
+          - echo
+failurePolicy:
+  action: abort
