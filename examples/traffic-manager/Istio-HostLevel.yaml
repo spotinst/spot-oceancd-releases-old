@@ -1,3 +1,8 @@
+name: RolloutSpec-OceanCD
+spotDeployment:
+  clusterId: cluster-name
+  namespace: mynamespace
+  name: nginx-deployment
 strategy:
     canary:
       canaryService: rollouts-demo-canary
@@ -11,3 +16,5 @@ strategy:
           - name: rollouts-demo-vsvc2
             routes:
             - secondary # At least one route is required
+failurePolicy:
+  action: abort | pause | ignore

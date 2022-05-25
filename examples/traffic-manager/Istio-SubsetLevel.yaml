@@ -1,3 +1,8 @@
+name: RolloutSpec-OceanCD
+spotDeployment:
+  clusterId: cluster-name
+  namespace: mynamespace
+  name: nginx-deployment
 strategy:
     canary:
       trafficRouting:
@@ -10,3 +15,5 @@ strategy:
             name: rollout-destrule    # required
             canarySubsetName: canary  # required
             stableSubsetName: stable  # required
+failurePolicy:
+  action: abort | pause | ignore
