@@ -14,15 +14,15 @@ Steps towards your Canary deployment:
    
     Do not forget to change accordingly the namespace. It will be found relevant for the rest of the procedure. 
     
-    Please note that your first apply will not create a Canary Deployment. 
+    Please note that your first apply will create your SpotDeployment resources (can be tracked via the Workload table). 
    
 
 2. Create and Apply your entities : Strategy & RolloutSpec
 
-    Please note that if you decide to make use of a traffic manager OceanCD supports many of them which can be found in the traffic manager
+    Please note that if you decide to make use of a traffic manager Ocean CD supports many of them which can be found in the traffic manager folder.
    
-3. Apply changes to your SpotDeployment and Apply
+3. Perform changes to your SpotDeployment and Apply
 
 
-You are now all set to get working with OceanCD. 
+You are now all set to get working with Ocean CD. 
    
