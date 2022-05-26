@@ -4,7 +4,7 @@ metadata:
   name: spot-oceancd-operator-subscription
   namespace: oceancd
 spec:
-  channel: ga
+  channel: stable
   name: spot-oceancd-operator
   source: spot-oceancd-catalog
   sourceNamespace: oceancd
