@@ -16,4 +16,4 @@ strategy:
             canarySubsetName: canary  # required
             stableSubsetName: stable  # required
 failurePolicy:
-  action: abort | pause | ignore
+  action: abort
