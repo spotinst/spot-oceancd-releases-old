@@ -17,4 +17,4 @@ strategy:
         servicePort: 80
         rootService: rollouts-demo-root
 failurePolicy:
-  action: abort | pause | ignore
+  action: abort
