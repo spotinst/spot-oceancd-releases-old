@@ -17,4 +17,4 @@ strategy:
             routes:
             - secondary # At least one route is required
 failurePolicy:
-  action: abort | pause | ignore
+  action: abort
