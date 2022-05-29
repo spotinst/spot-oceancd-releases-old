@@ -14,4 +14,4 @@ strategy:
           canary-by-header: X-Canary
           canary-by-header-value: iwantsit
 failurePolicy:
-  action: abort | pause | ignore
+  action: abort
