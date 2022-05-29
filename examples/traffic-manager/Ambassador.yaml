@@ -12,4 +12,4 @@ strategy:
         mappings:
           - echo
 failurePolicy:
-  action: abort | pause | ignore
+  action: abort
