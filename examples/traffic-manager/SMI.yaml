@@ -10,4 +10,4 @@ strategy:
       trafficRouting:
         smi: {}
 failurePolicy:
-  action: abort | pause | ignore
+  action: abort
