@@ -17,6 +17,7 @@ Steps towards your Canary deployment
 3. Create Ocean CD entities that manage your SpotDeployment rollout logic: Strategy & RolloutSpec. See entities formats that can be used via API inside the entities folder.
 Make sure to use your Spot API token for authorization. API Routes: 
 https://api.spotinst.io/ocean/cd/rolloutSpec
+   
 https://api.spotinst.io/ocean/cd/strategy
    
 **Notes for RolloutSpec**:
