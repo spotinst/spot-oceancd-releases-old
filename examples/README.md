@@ -1,4 +1,5 @@
 Getting Started
+
 Prerequisites:
 ```sh
 Have a running Kubernetes cluster 
@@ -7,7 +8,7 @@ An installed Ocean CD operator. Use the following API: https://api.spotinst.io/o
 ```
 Steps towards your Canary deployment
 
-Note: Here you will find all of the relevant templates to get started with Ocean CD and apply a Canary Deployment strategy for a demo NGINX application.
+Note: Here you will find all the relevant templates to get started with Ocean CD and apply a Canary Deployment strategy for a demo NGINX application.
 
 1. Migrate your Deployment.yaml into a ‘SpotDeployment’ CRD by copying your deployment and change its ‘Kind’ to SpotDeployment (see ‘SpotDeployment.yaml). 
 Note: Do not forget to update the namespace in which you plan to do the rollouts. 
