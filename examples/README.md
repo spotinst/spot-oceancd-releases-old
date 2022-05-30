@@ -1,6 +1,6 @@
-Getting Started
+#Getting Started
 
-Prerequisites:
+####Prerequisites:
 ```sh
 - Have a running Kubernetes cluster 
 - Have an installed operator lifecycle manager (‘OLM’)
