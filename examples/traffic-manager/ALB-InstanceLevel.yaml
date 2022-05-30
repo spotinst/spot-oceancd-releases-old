@@ -4,7 +4,7 @@ spotDeployment:
   namespace: mynamespace
   name: nginx-deployment
 strategy:
-  name: canary-datadog-dev
+  name: Strategy-OceanCD
   canary:
     canaryService: rollouts-demo-canary
     stableService: rollouts-demo-stable
