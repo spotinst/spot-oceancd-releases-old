@@ -1,4 +1,4 @@
-{{- if .Values.argoRollouts.create }}
+{{- if .Values.argo-rollouts.create }}
 apiVersion: v1
 kind: Service
 metadata:
