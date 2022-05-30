@@ -5,7 +5,6 @@ spotDeployment:
   name: nginx-deployment
 strategy:
   name: Strategy-OceanCD
-
   canary:
     pingPong:
       pingService: rollouts-demo-canary

@@ -5,8 +5,6 @@ spotDeployment:
   name: nginx-deployment
 strategy:
   name: Strategy-OceanCD
-
-
   canary:
     canaryService: rollouts-demo-canary
     stableService: rollouts-demo-stable
