@@ -4,10 +4,11 @@ spotDeployment:
   namespace: mynamespace
   name: nginx-deployment
 strategy:
-    canary:
-      canaryService: rollouts-demo-canary
-      stableService: rollouts-demo-stable
-      trafficRouting:
-        smi: {}
+  name: Strategy-OceanCD
+  canary:
+    canaryService: rollouts-demo-canary
+    stableService: rollouts-demo-stable
+    trafficRouting:
+      smi: {}
 failurePolicy:
   action: abort
