@@ -13,15 +13,16 @@ Steps towards your Canary deployment
 1. Migrate your Deployment.yaml into a ‘SpotDeployment’ CRD by copying your deployment and change its ‘Kind’ to SpotDeployment (see ‘SpotDeployment.yaml). 
 
 **Note**: Do not forget to update the namespace in which you plan to do the rollouts. 
+
 2. Apply and create your SpotDeployment .Please note that your first apply will create the new SpotDeployment pods (can be tracked via the console UI, ‘Workloads’ page).
 3. Create Canary and Stable services that will be used to expose your canary and stable pods with the respective traffic. 
-3. Create Ocean CD entities that manage your SpotDeployment rollout logic: Strategy & RolloutSpec. See entities formats that can be used via API inside the entities folder.
+4. Create Ocean CD entities that manage your SpotDeployment rollout logic: Strategy & RolloutSpec. See entities formats that can be used via API inside the entities folder.
 Make sure to use your Spot API token for authorization. 
    
     API Routes: 
 
     https://api.spotinst.io/ocean/cd/rolloutSpec
-https://api.spotinst.io/ocean/cd/strategy
+    https://api.spotinst.io/ocean/cd/strategy
    
 **Notes for RolloutSpec**:
 Make sure to use the same namespace and Cluster ID to which your SpotDeployment is applied.
