@@ -1,6 +1,6 @@
 {
     "rolloutSpec": {
-              "name":"RolloutSpec-OceanCD",
+                "name":"RolloutSpec-OceanCD",
                 "spotDeployment": {
                     "clusterId": "cluster-name",
                     "namespace": "namespace",
