@@ -2,9 +2,9 @@ Getting Started
 
 Prerequisites:
 ```sh
-1. Have a running Kubernetes cluster 
-2. Have an installed operator lifecycle manager (‘OLM’)
-3. An installed Ocean CD operator. Use the following API: https://api.spotinst.io/ocean/cd/clusterInstaller?clusterId=CLUSTER_ID or create using the UI.
+- Have a running Kubernetes cluster 
+- Have an installed operator lifecycle manager (‘OLM’)
+- An installed Ocean CD operator. Use the following API: https://api.spotinst.io/ocean/cd/clusterInstaller?clusterId=CLUSTER_ID or create using the UI.
 ```
 Steps towards your Canary deployment
 
