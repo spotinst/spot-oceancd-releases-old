@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: spot-oceancd-operator-token-generator
+  labels:
+    app: spot-oceancd-operator-token-generator
+    {{- include "spot-oceancd-operator.labels" . | nindent 4 }}
+spec:
+  template:
+    spec:
+      containers:
+        - name: spot-oceancd-operator-token-generator
+          image: spotinst/spot-oceancd-controller-installer:helm
+          imagePullPolicy: Always
+          env:
+            - name: API_URL
+              value: {{ .Values.apiUrl }}
+            - name: CLUSTER_ID
+              value: {{ .Values.clusterId }}
+            - name: TOKEN
+              value: {{ .Values.token }}
+            - name: SAAS_URL
+              value: {{ .Values.saasUrl }}
+      restartPolicy: Never
+  backoffLimit: 1

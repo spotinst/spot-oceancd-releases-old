@@ -4,7 +4,7 @@ metadata:
   labels:
     app.kubernetes.io/component: aggregate-cluster-role
     app.kubernetes.io/name: argo-rollouts-aggregate-to-admin
-    app.kubernetes.io/part-of: argo-rollouts
+    app.kubernetes.io/part-of: spot-oceancd-operator
     rbac.authorization.k8s.io/aggregate-to-admin: "true"
   name: argo-rollouts-aggregate-to-admin
 rules:
