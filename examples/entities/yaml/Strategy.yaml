@@ -5,6 +5,7 @@ canary:
     setWeight: 20
     pause:
       duration: 2m
+
   - name: second-phase
     setWeight: 40
     pause: {}
