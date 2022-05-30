@@ -5,6 +5,7 @@ spotDeployment:
   name: nginx-deployment
 strategy:
   name: Strategy-OceanCD
+
   canary:
     trafficRouting:
       istio:
