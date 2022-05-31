@@ -1,3 +1,4 @@
+{{- if .Values.argo-rollouts.create }}
 apiVersion: v1
 kind: Service
 metadata:
@@ -15,3 +16,4 @@ spec:
     targetPort: 8090
   selector:
     app.kubernetes.io/name: argo-rollouts
+{{- end }}

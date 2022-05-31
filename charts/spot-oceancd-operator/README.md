@@ -1,6 +1,6 @@
 # spot-oceancd-operator
 
-![Version: 1.1.0](https://img.shields.io/badge/Version-1.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.1.0](https://img.shields.io/badge/AppVersion-1.1.0-informational?style=flat-square)
+![Version: 1.1.1](https://img.shields.io/badge/Version-1.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.1.1](https://img.shields.io/badge/AppVersion-1.1.1-informational?style=flat-square)
 
 A Helm chart for spot-oceancd-operator
 
@@ -9,17 +9,18 @@ A Helm chart for spot-oceancd-operator
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | apiUrl | string | `"https://api.spotinst.io"` | (Optional) Spot Api URL |
+| argo-rollouts.create | bool | `true` | (Optional) If create argo-rollouts |
+| argo-rollouts.deployment.affinity | object | `{}` | (Optional) Assign custom [affinity] rules to the deployment |
+| argo-rollouts.deployment.containerSecurityContext | object | `{}` | (Optional) Security Context to set on container level |
+| argo-rollouts.deployment.extraArgs | list | `[]` | (Optional) Additional command line arguments to pass to rollouts-controller.  A list of flags. |
+| argo-rollouts.deployment.nodeSelector | object | `{}` | (Optional) Node selector |
+| argo-rollouts.deployment.podSecurityContext | object | `{"runAsNonRoot":true}` | (Optional) Security Context to set on pod level |
+| argo-rollouts.deployment.resources | object | `{}` | (Optional) Resource limits and requests for the controller pods. |
+| argo-rollouts.deployment.tolerations | list | `[]` | (Optional) Tolerations for use with node taints |
+| argo-rollouts.serviceAccount.annotations | object | `{}` | (Optional) Service Account Annotations |
 | channel | string | `"stable"` | (Optional) Operator Catalog channel |
 | clusterId | string | `""` | (Required) Cluster ID |
-| deployment.affinity | object | `{}` | (Optional) Assign custom [affinity] rules to the deployment |
-| deployment.containerSecurityContext | object | `{}` | (Optional) Security Context to set on container level |
-| deployment.extraArgs | list | `[]` | (Optional) Additional command line arguments to pass to rollouts-controller.  A list of flags. |
-| deployment.nodeSelector | object | `{}` | (Optional) Node selector |
-| deployment.podSecurityContext | object | `{"runAsNonRoot":true}` | (Optional) Security Context to set on pod level |
-| deployment.resources | object | `{}` | (Optional) Resource limits and requests for the controller pods. |
-| deployment.tolerations | list | `[]` | (Optional) Tolerations for use with node taints |
 | saasUrl | string | `"https://cluster-gateway.oceancd.io"` | (Optional) Saas URL |
-| serviceAccount.annotations | object | `{}` | (Optional) Service Account Annotations |
 | token | string | `""` | (Required) Spot Token |
 
 ----------------------------------------------

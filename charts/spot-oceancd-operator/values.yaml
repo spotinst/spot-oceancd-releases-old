@@ -1,35 +1,42 @@
-serviceAccount:
+argo-rollouts:
 
-  # -- (Optional) Service Account Annotations
-  annotations: {}
-deployment:
-  # -- (Optional) Additional command line arguments to pass to rollouts-controller.  A list of flags.
-  extraArgs: []
+  # -- (Optional) If create argo-rollouts
+  create: true
 
-  # -- (Optional) Security Context to set on container level
-  containerSecurityContext: {}
+  serviceAccount:
 
-  # -- (Optional) Resource limits and requests for the controller pods.
-  resources: {}
-  #  limits:
-  #    cpu: 100m
-  #    memory: 128Mi
-  #  requests:
-  #    cpu: 50m
-  #    memory: 64Mi
+    # -- (Optional) Service Account Annotations
+    annotations: {}
 
-  # -- (Optional) Security Context to set on pod level
-  podSecurityContext:
-    runAsNonRoot: true
+  deployment:
 
-  # -- (Optional) Node selector
-  nodeSelector: {}
+    # -- (Optional) Additional command line arguments to pass to rollouts-controller.  A list of flags.
+    extraArgs: []
 
-  # -- (Optional) Tolerations for use with node taints
-  tolerations: []
+    # -- (Optional) Security Context to set on container level
+    containerSecurityContext: {}
 
-  # -- (Optional) Assign custom [affinity] rules to the deployment
-  affinity: {}
+    # -- (Optional) Resource limits and requests for the controller pods.
+    resources: {}
+    #  limits:
+    #    cpu: 100m
+    #    memory: 128Mi
+    #  requests:
+    #    cpu: 50m
+    #    memory: 64Mi
+
+    # -- (Optional) Security Context to set on pod level
+    podSecurityContext:
+      runAsNonRoot: true
+
+    # -- (Optional) Node selector
+    nodeSelector: {}
+
+    # -- (Optional) Tolerations for use with node taints
+    tolerations: []
+
+    # -- (Optional) Assign custom [affinity] rules to the deployment
+    affinity: {}
 
 # -- (Required) Spot Token
 token: ""
