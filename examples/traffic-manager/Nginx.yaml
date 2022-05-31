@@ -1,19 +1,19 @@
+
 rolloutSpec:
-  name: RolloutSpec-OceanCD
+  name: juliarolloutspec-nginx
   spotDeployment:
-    clusterId: cluster-name
-    namespace: mynamespace
-    name: nginx-deployment
+    clusterId: juliaprod
+    namespace: juliaprod
+    name: juliatest-nginx
   strategy:
     name: Strategy-testpolling
-    canary:
-      canaryService: rollouts-demo-canary
-      stableService: rollouts-demo-stable
-      trafficRouting:
-        nginx:
-          stableIngress: rollouts-demo-stable
-          additionalIngressAnnotations:
-            canary-by-header: X-Canary
-            canary-by-header-value: iwantsit
-    failurePolicy:
-      action: abort
+  traffic:
+    canaryService: rollouts-demo-stable
+    stableService: rollouts-demo-canary
+    nginx:
+      stableIngress: rollouts-demo-stable-nginx
+      additionalIngressAnnotations:
+        canary-by-header: X-Canary
+        canary-by-header-value: iwantsit
+  failurePolicy:
+    action: abort
