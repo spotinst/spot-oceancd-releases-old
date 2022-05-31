@@ -1,10 +1,11 @@
+{{- if .Values.argo-rollouts.create }}
 apiVersion: v1
 kind: Service
 metadata:
   labels:
     app.kubernetes.io/component: server
     app.kubernetes.io/name: argo-rollouts-metrics
-    app.kubernetes.io/part-of: argo-rollouts
+    app.kubernetes.io/part-of: spot-oceancd-operator
   name: argo-rollouts-metrics
   namespace: argo-rollouts
 spec:
@@ -15,3 +16,4 @@ spec:
     targetPort: 8090
   selector:
     app.kubernetes.io/name: argo-rollouts
+{{- end }}

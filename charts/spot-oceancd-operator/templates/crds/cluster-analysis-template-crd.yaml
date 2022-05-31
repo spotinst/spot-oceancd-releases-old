@@ -1,3 +1,4 @@
+{{- if .Values.argo-rollouts.create }}
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -6,24 +7,20 @@ metadata:
   labels:
     app.kubernetes.io/name: argo-rollouts
     app.kubernetes.io/part-of: argo-rollouts
-  name: analysisruns.argoproj.io
+  name: clusteranalysistemplates.argoproj.io
 spec:
   group: argoproj.io
   names:
-    kind: AnalysisRun
-    listKind: AnalysisRunList
-    plural: analysisruns
+    kind: ClusterAnalysisTemplate
+    listKind: ClusterAnalysisTemplateList
+    plural: clusteranalysistemplates
     shortNames:
-    - ar
-    singular: analysisrun
+    - cat
+    singular: clusteranalysistemplate
   preserveUnknownFields: false
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
-    - description: AnalysisRun status
-      jsonPath: .status.phase
-      name: Status
-      type: string
     - description: Time since resource was created
       jsonPath: .metadata.creationTimestamp
       name: Age
@@ -2745,122 +2742,8 @@ spec:
                   - provider
                   type: object
                 type: array
-              terminate:
-                type: boolean
             required:
             - metrics
-            type: object
-          status:
-            properties:
-              dryRunSummary:
-                properties:
-                  count:
-                    format: int32
-                    type: integer
-                  error:
-                    format: int32
-                    type: integer
-                  failed:
-                    format: int32
-                    type: integer
-                  inconclusive:
-                    format: int32
-                    type: integer
-                  successful:
-                    format: int32
-                    type: integer
-                type: object
-              message:
-                type: string
-              metricResults:
-                items:
-                  properties:
-                    consecutiveError:
-                      format: int32
-                      type: integer
-                    count:
-                      format: int32
-                      type: integer
-                    dryRun:
-                      type: boolean
-                    error:
-                      format: int32
-                      type: integer
-                    failed:
-                      format: int32
-                      type: integer
-                    inconclusive:
-                      format: int32
-                      type: integer
-                    measurements:
-                      items:
-                        properties:
-                          finishedAt:
-                            format: date-time
-                            type: string
-                          message:
-                            type: string
-                          metadata:
-                            additionalProperties:
-                              type: string
-                            type: object
-                          phase:
-                            type: string
-                          resumeAt:
-                            format: date-time
-                            type: string
-                          startedAt:
-                            format: date-time
-                            type: string
-                          value:
-                            type: string
-                        required:
-                        - phase
-                        type: object
-                      type: array
-                    message:
-                      type: string
-                    metadata:
-                      additionalProperties:
-                        type: string
-                      type: object
-                    name:
-                      type: string
-                    phase:
-                      type: string
-                    successful:
-                      format: int32
-                      type: integer
-                  required:
-                  - name
-                  - phase
-                  type: object
-                type: array
-              phase:
-                type: string
-              runSummary:
-                properties:
-                  count:
-                    format: int32
-                    type: integer
-                  error:
-                    format: int32
-                    type: integer
-                  failed:
-                    format: int32
-                    type: integer
-                  inconclusive:
-                    format: int32
-                    type: integer
-                  successful:
-                    format: int32
-                    type: integer
-                type: object
-              startedAt:
-                format: date-time
-                type: string
-            required:
-            - phase
             type: object
         required:
         - spec
@@ -2868,3 +2751,4 @@ spec:
     served: true
     storage: true
     subresources: {}
+{{- end }}
