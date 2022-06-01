@@ -1,21 +1,23 @@
-name: RolloutSpec-OceanCD
-spotDeployment:
-  clusterId: cluster-name
-  namespace: mynamespace
-  name: nginx-deployment
-strategy:
-  name: Strategy-OceanCD
-  canary:
+---
+rolloutSpec:
+  name: RolloutSpec-OceanCD
+  spotDeployment:
+    clusterId: cluster-name
+    namespace: mynamespace
+    name: nginx-deployment
+  strategy:
+    name: Strategy-OceanCD
+  traffic:
     pingPong:
       pingService: rollouts-demo-canary
-      pingService: rollouts-demo-stable
-    trafficRouting:
-      alb:
-        stickinessConfig:
-          enabled: true
-          durationSeconds: 3600
-        ingress: rollouts-demo-ingress
-        servicePort: 80
-        rootService: rollouts-demo-root
-failurePolicy:
-  action: abort
+      pongService: rollouts-demo-stable
+    alb:
+      ingress: rollouts-demo-ingress
+      servicePort: 80
+      rootService: rollouts-demo-root
+      stickinessConfig:
+        enabled: true
+        durationSeconds: 3600
+      annotationPrefix: string
+  failurePolicy:
+    action: abort
