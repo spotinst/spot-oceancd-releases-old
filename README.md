@@ -21,15 +21,16 @@ Prerequisites:
 
 **Note: Please contact Ocean CD team to get a private preview access, for installing Ocean CD controller and for full documentation.**
 
-After installing the Ocean CD Operator in your cluster, you will create the following Ocean CD entities:
-- SpotDeployment
-- Strategy
-- RolloutSpec
+After installing the Ocean CD Operator in your cluster, you will set up three basic types of entities:
 
+- A SpotDeployment CRD: Ocean CD replacement of a Deployment Resource
+- A Strategy: An entity including a definition of phases that manage the way your workload changes are being exposed in the desired cluster and namespace
+- A RolloutSpec: An entity including the CD process description for the selected workload
 
 ## Quick Start
 
-You may make use of the examples section to efficiently get started with OceanCD.
-Such examples will accompany you through a simplified and quick Canary Deployment. 
+To easily get started with OceanCD, you may make use of the 'examples' section found above. 
+Through such files, you will find a series of examples which will accompany you through the process of a simplified and quick Canary Deployment. 
+
 
 Should you wish me to make use of specific traffic manager, we invite you to take a look at the ones we support and the way it should be used. 
