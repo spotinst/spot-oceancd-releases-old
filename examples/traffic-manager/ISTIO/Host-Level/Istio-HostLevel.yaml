@@ -1,5 +1,3 @@
-
----
 rolloutSpec:
   name: RolloutSpec-OceanCD
   spotDeployment:
@@ -9,18 +7,12 @@ rolloutSpec:
   strategy:
     name: Strategy-OceanCD
   traffic:
+    canaryService: rollouts-demo-canary
     stableService: rollouts-demo-stable
     istio:
       virtualServices:
-      - name: rollouts-demo-vsvc
-        routes:
-        - primary
-      destinationRule:
-        name: rollout-destrule
-        canarySubsetName: canary
-        stableSubsetName: stable
-  failurePolicy:
-    action: abort
-
-
-
+        - name: rollout-vsvc
+          routes:
+            - primary
+    failurePolicy:
+      action: abort

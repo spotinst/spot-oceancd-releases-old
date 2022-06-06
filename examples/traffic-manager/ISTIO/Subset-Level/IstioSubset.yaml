@@ -1,3 +1,4 @@
+---
 rolloutSpec:
   name: RolloutSpec-OceanCD
   spotDeployment:
@@ -7,16 +8,15 @@ rolloutSpec:
   strategy:
     name: Strategy-OceanCD
   traffic:
-    canaryService: rollouts-demo-canary
     stableService: rollouts-demo-stable
     istio:
       virtualServices:
-      - name: rollouts-demo-vsvc
+      - name: rollout-vsvc
         routes:
         - primary
-        tlsRoutes:
-        - port: 443
-          sniHosts:
-          - spot.io
+      destinationRule:
+        name: rollout-destrule
+        canarySubsetName: canary
+        stableSubsetName: stable
     failurePolicy:
-      action: abort
+      'action:': abort
