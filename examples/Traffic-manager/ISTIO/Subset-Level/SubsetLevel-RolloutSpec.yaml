@@ -1,22 +1,22 @@
 ---
-rolloutSpec:
-  name: RolloutSpec-OceanCD
-  spotDeployment:
-    clusterId: cluster-name
-    namespace: mynamespace
-    name: nginx-deployment
-  strategy:
-    name: Strategy-OceanCD
-  traffic:
-    stableService: rollouts-demo-stable
-    istio:
-      virtualServices:
-      - name: rollout-vsvc
-        routes:
-        - primary
-      destinationRule:
-        name: rollout-destrule
-        canarySubsetName: canary
-        stableSubsetName: stable
-  failurePolicy:
-    action: abort
+kind: RolloutSpec
+name: RolloutSpec-OceanCD
+spotDeployment:
+  clusterId: cluster-name
+  namespace: mynamespace
+  name: nginx-deployment
+strategy:
+  name: Strategy-OceanCD
+traffic:
+  stableService: rollouts-demo-stable
+  istio:
+    virtualServices:
+    - name: rollout-vsvc
+      routes:
+      - primary
+    destinationRule:
+      name: rollout-destrule
+      canarySubsetName: canary
+      stableSubsetName: stable
+failurePolicy:
+  action: abort
