@@ -1,8 +1,10 @@
-# Spot Ocean CD (private preview)
+# Spot Ocean CD 
 
-Ocean CD makes Kubernetes an afterthought for application teams. Commit code and Ocean CD takes care of operations, automation and monitoring to ensure SLOs and production health.
+Ocean CD focuses on the most painful aspects of modern application delivery, giving developers the freedom to push code with confidence while DevOps easily maintain governance and SLOs.
 
-https://spot.io/products/ocean-cd
+Ocean CD provides DevOps and Infrastructure teams with out of the box processes to reimplement and share complex and mission critical pieces of CD across different environments, such as progressive delivery and verification of the software deployments. Service owners are able to promote service changes to production without code or re-inventing deployment strategies. Developers are able to commit with confidence, now that the deployment phases are managed and visible.
+
+https://docs.spot.io/ocean-cd/
 
 ## Table of Contents
 
@@ -12,61 +14,22 @@ https://spot.io/products/ocean-cd
 ## Installation
 
 Prerequisites:
-- Kubernetes cluster up and running
+- Kubernetes cluster up and running ( Azure,GCP,AWS)
 - Workstation with the Kubernetes cluster context and kubectl installed
+- Have an installed operator lifecycle manager (‘OLM’)
 - [A Spot API token](https://docs.spot.io/administration/api/create-api-token)
 
 **Note: Please contact Ocean CD team to get a private preview access, for installing Ocean CD controller and for full documentation.**
 
-After installing the Ocean CD controller in your cluster, you will create the following Ocean CD entities:
-- Environment
-- Microservice
-- Notification Provider
-- Rollout Spec
+After installing the Ocean CD Operator in your cluster, you will create the following Ocean CD entities:
+- SpotDeployment
+- Strategy
+- RolloutSpec
+
 
 ## Quick Start
 
-For quick start you can use [oceancd_baker](oceancd_baker.py) script to create a basic configuration. (That you can easily modified later via API)
+You may make use of the examples section to efficiently get started with OceanCD.
+Such examples will accompany you through a simplified and quick Canary Deployment. 
 
-Use any 'Example' deployment YAML (which is installed in your connected cluster) to get a quick overview of Ocean CD capabilities.
-
-Run the following commands on your local machine:
-- wget https://raw.githubusercontent.com/spotinst/spot-oceancd-releases/main/oceancd_baker.py
-- pip3 install requests (if not already installed)
-- chmod +x oceancd_baker.py
-
-```console
-chmod +x oceancd_baker.py
-
-./oceancd_baker.py -h
-usage: oceancd_baker [-h] -t TOKEN -e ENVIRONMENT_NAME -c CLUSTER_ID -m MICROSERVICE_NAME -l [LABELS [LABELS ...]] [-n NOTIFICATION_PROVIDER] [-w WEBHOOK]
-
-oceancd_baker
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -t TOKEN, --token TOKEN
-                        Api token to spot api
-  -e ENVIRONMENT_NAME, --environment_name ENVIRONMENT_NAME
-                        Environment name
-  -c CLUSTER_ID, --cluster_id CLUSTER_ID
-                        Cluster id for environment
-  -m MICROSERVICE_NAME, --microservice_name MICROSERVICE_NAME
-                        Microservice name
-  -l [LABELS [LABELS ...]], --labels [LABELS [LABELS ...]]
-                        Set of k8s labels that are exisitng on the wanted workload
-  -n NOTIFICATION_PROVIDER, --notification_provider NOTIFICATION_PROVIDER
-                        The name identifier of the Ocean CD notification provider
-  -w WEBHOOK, --webhook WEBHOOK
-                        Webhook url
-
- example:
-    ./oceancd_baker.py -t 1234 -e test-environment -c test-cluster -m test-microservice -l app=test -n test-notification -w https://webhook.site
-```
-
-Expected outcome:
-- Confirmation has been received, Ocean CD entities has been created.
-- You can now run your 'Example' deployment (make sure to do some changes in the spec template to demonstrate the update), and see Ocean CD in action!
-
-You can use the getting started script to create more rollout objects,
-or go to Spot API documentation and use your favorite API tool.
+Should you wish me to make use of specific traffic manager, we invite you to take a look at the ones we support and the way it should be used. 
