@@ -18,5 +18,5 @@ rolloutSpec:
         name: rollout-destrule
         canarySubsetName: canary
         stableSubsetName: stable
-    failurePolicy:
-      'action:': abort
+  failurePolicy:
+    action: abort

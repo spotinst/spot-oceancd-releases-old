@@ -14,5 +14,5 @@ rolloutSpec:
         - name: rollout-vsvc
           routes:
             - primary
-    failurePolicy:
-      action: abort
+  failurePolicy:
+    action: abort
