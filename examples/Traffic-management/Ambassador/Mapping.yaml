@@ -1,7 +1,7 @@
 apiVersion: getambassador.io/v2
-kind:  Mapping
+kind: Mapping
 metadata:
-  name:  echo
+  name: echo
 spec:
   resolver: endpoint
   prefix: /nginx
