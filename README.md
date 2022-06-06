@@ -8,10 +8,10 @@ https://docs.spot.io/ocean-cd/
 
 ## Table of Contents
 
-- [Installation](#installation)
+- [Operator Installation](#Operator-installation)
 - [Quick Start](#quick-start)
 
-## Installation
+## Operator Installation
 
 Prerequisites:
 - Kubernetes cluster up and running ( Azure,GCP,AWS)
@@ -19,27 +19,33 @@ Prerequisites:
 - Have an installed operator lifecycle manager (‘OLM’)
 - [A Spot API token](https://docs.spot.io/administration/api/create-api-token)
 
-**Note: Please contact Ocean CD team to get a private preview access, for installing Ocean CD operator and for full documentation.**
+The Ocean CD Operator detects every applied SpotDeployment, monitors all of your resources, and manages rollouts based on the SaaS logic. Whenever the SpotDeployment is applied, the SaaS will trigger a rollout. 
 
-After installing the Ocean CD Operator in your cluster, you will set up three basic types of entities:
+You may install your operator via API, UI or HELM.
 
-- A SpotDeployment CRD: Ocean CD replacement of a Deployment Resource
-- A Strategy: An entity including a definition of phases that manage the way your workload changes are being exposed in the desired cluster and namespace
-- A RolloutSpec: An entity including the CD process description for the selected workload
+No matter which method you will choose, during the installation, you will be required to update wheter or not your cluster has an already installed Argo Rollout installation.
+
+
+**Helm Option** : We invite you to reach to the Charts directory, and follow the commands described. 
+
+**API & UI Options**: We invite you to reach out to our documentation for further details on the process and the commands. 
+Please note that for such a method, a YAML file will be downloaded onto your computer and you will be required to run it accordingly. 
+
 
 ## Quick Start
 
+After installing the Ocean CD Operator in your cluster, you will set up three basic types of entities:
+
+- Create a SpotDeployment CRD  - Ocean CD replacement of a Deployment Resource
+- Define Strategy - An entity including a definition of phases that manage
+the way your workload changes are being exposed in the desired
+cluster and namespace
+- Define RolloutSpec - An entity including the CD strategy and traffic definitions 
+for the selected SpotDeployment.
+
+  
 To easily get started with OceanCD, you may make use of the 'examples' section found above. 
 Through such files, you will find a series of examples which will accompany you through the process of a simplified and quick Canary Deployment. 
 
-#### Few Guidelines:
-
-1. Create a SpotDeployment and apply it to Kubernetes cluster
-2. Create a Strategy
-3. Define a RolloutSpec
-
-4. Apply once again your SpotDeployment with the desired changes. 
-
-Should you wish me to make use of specific traffic manager, we invite you to take a look at the ones we support and the way it should be used. 
 
 
