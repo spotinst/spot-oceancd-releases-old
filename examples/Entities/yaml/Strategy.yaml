@@ -1,3 +1,4 @@
+kind: Strategy
 name: Strategy-OceanCD
 canary:
   steps:

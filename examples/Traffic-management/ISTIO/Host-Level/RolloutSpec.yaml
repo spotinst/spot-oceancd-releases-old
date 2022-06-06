@@ -7,10 +7,12 @@ spotDeployment:
 strategy:
   name: Strategy-OceanCD
 traffic:
-  stableService: rollouts-demo-stable
   canaryService: rollouts-demo-canary
+  stableService: rollouts-demo-stable
+  istio:
+    virtualServices:
+      - name: rollout-vsvc
+        routes:
+          - primary
 failurePolicy:
   action: abort
-
-
-    

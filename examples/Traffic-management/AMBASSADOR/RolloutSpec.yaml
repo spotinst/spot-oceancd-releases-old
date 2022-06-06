@@ -1,5 +1,6 @@
+--
 kind: RolloutSpec
-name: RolloutSpec-OceanCD
+name: service-rolloutspec
 spotDeployment:
   clusterId: cluster-name
   namespace: mynamespace
@@ -7,10 +8,10 @@ spotDeployment:
 strategy:
   name: Strategy-OceanCD
 traffic:
-  stableService: rollouts-demo-stable
   canaryService: rollouts-demo-canary
+  stableService: rollouts-demo-stable
+  ambassador:
+    mappings:
+    - echo
 failurePolicy:
   action: abort
-
-
-    

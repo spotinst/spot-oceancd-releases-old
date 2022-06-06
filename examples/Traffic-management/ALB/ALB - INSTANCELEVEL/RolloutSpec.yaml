@@ -1,3 +1,4 @@
+---
 kind: RolloutSpec
 name: RolloutSpec-OceanCD
 spotDeployment:
@@ -7,10 +8,15 @@ spotDeployment:
 strategy:
   name: Strategy-OceanCD
 traffic:
-  stableService: rollouts-demo-stable
   canaryService: rollouts-demo-canary
+  stableService: rollouts-demo-stable
+  alb:
+    ingress: rollouts-demo-ingress
+    servicePort: 80
+    rootService: rollouts-demo-root
+    stickinessConfig:
+      enabled: true
+      durationSeconds: 3600
+    annotationPrefix: string
 failurePolicy:
   action: abort
-
-
-    

@@ -19,7 +19,7 @@ Prerequisites:
 - Have an installed operator lifecycle manager (‘OLM’)
 - [A Spot API token](https://docs.spot.io/administration/api/create-api-token)
 
-**Note: Please contact Ocean CD team to get a private preview access, for installing Ocean CD controller and for full documentation.**
+**Note: Please contact Ocean CD team to get a private preview access, for installing Ocean CD operator and for full documentation.**
 
 After installing the Ocean CD Operator in your cluster, you will set up three basic types of entities:
 
@@ -32,5 +32,14 @@ After installing the Ocean CD Operator in your cluster, you will set up three ba
 To easily get started with OceanCD, you may make use of the 'examples' section found above. 
 Through such files, you will find a series of examples which will accompany you through the process of a simplified and quick Canary Deployment. 
 
+#### Few Guidelines:
+
+1. Create a SpotDeployment and apply it to Kubernetes cluster
+2. Create a Strategy
+3. Define a RolloutSpec
+
+4. Apply once again your SpotDeployment with the desired changes. 
 
 Should you wish me to make use of specific traffic manager, we invite you to take a look at the ones we support and the way it should be used. 
+
+
