@@ -8,7 +8,7 @@ https://docs.spot.io/ocean-cd/
 
 ## Table of Contents
 
-- [Installation](#installation)
+- [Operator Installation](#Operator-installation)
 - [Quick Start](#quick-start)
 
 ## Operator Installation
