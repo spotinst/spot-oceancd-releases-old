@@ -24,7 +24,7 @@ spec:
       - image: quay.io/argoproj/argo-rollouts:v1.2.1
         imagePullPolicy: Always
         args:
-        {{- with .Values.argo-rollouts.deployment.extraArgs }}
+        {{- with .Values.argoRollouts.deployment.extraArgs }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
         livenessProbe:
@@ -52,22 +52,22 @@ spec:
           successThreshold: 1
           timeoutSeconds: 4
         securityContext:
-          {{- toYaml .Values.argo-rollouts.deployment.containerSecurityContext | nindent 10 }}
+          {{- toYaml .Values.argoRollouts.deployment.containerSecurityContext | nindent 10 }}
         resources:
-          {{- toYaml .Values.argo-rollouts.deployment.resources | nindent 10 }}
+          {{- toYaml .Values.argoRollouts.deployment.resources | nindent 10 }}
       serviceAccountName: argo-rollouts
-      {{- if .Values.deployment.nodeSelector }}
+      {{- if .Values.argoRollouts.deployment.nodeSelector }}
       nodeSelector:
-        {{- toYaml .Values.argo-rollouts.deployment.nodeSelector | nindent 8 }}
+        {{- toYaml .Values.argoRollouts.deployment.nodeSelector | nindent 8 }}
       {{- end }}
       securityContext:
         {{- toYaml .Values.argo-rollouts.deployment.podSecurityContext | nindent 8 }}
-      {{- if .Values.deployment.tolerations }}
+      {{- if .Values.argoRollouts.deployment.tolerations }}
       tolerations:
-        {{- toYaml .Values.argo-rollouts.deployment.tolerations | nindent 8 }}
+        {{- toYaml .Values.argoRollouts.deployment.tolerations | nindent 8 }}
       {{- end }}
-      {{- if .Values.argo-rollouts.deployment.affinity }}
+      {{- if .Values.argoRollouts.deployment.affinity }}
       affinity:
-        {{- toYaml .Values.argo-rollouts.deployment.affinity | nindent 8 }}
+        {{- toYaml .Values.argoRollouts.deployment.affinity | nindent 8 }}
       {{- end }}
 {{- end }}
