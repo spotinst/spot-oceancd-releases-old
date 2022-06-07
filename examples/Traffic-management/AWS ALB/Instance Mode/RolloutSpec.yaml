@@ -19,4 +19,4 @@ traffic:
       durationSeconds: 3600
     annotationPrefix: string
 failurePolicy:
-  action: abort -
+  action: abort
