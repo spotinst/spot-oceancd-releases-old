@@ -13,4 +13,4 @@ spec:
         backend:
           # Reference to a Service name, also specified in the Rollout spec.strategy.canary.stableService field
           serviceName: rollouts-demo-canary
-          servicePort: 80-
+          servicePort: 80
