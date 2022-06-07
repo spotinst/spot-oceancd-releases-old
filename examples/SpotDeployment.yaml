@@ -2,7 +2,6 @@ apiVersion: spot.io/v1beta1
 kind: SpotDeployment
 metadata:
   name: nginx-deployment
-  namespace: mynamespace
   labels:
     app: nginx
 spec:
