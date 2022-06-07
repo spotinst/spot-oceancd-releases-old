@@ -16,4 +16,4 @@ traffic:
       canary-by-header: X-Canary
       canary-by-header-value: iwantsit
 failurePolicy:
-  action: abort
+  action: abort-
