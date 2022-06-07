@@ -22,10 +22,12 @@ Prerequisites:
 The Ocean CD Operator detects every applied SpotDeployment, monitors all of your resources, and manages rollouts based on the SaaS logic. Whenever the SpotDeployment is applied, the SaaS will trigger a rollout. 
 
 You may install your operator via API, UI or HELM.
-No matter which method you will chose, during the installation, you will be required to update wheter or not your cluster has an already installed Argo Rollout installation.
+
+No matter which method you will choose, during the installation, you will be required to update wheter or not your cluster has an already installed Argo Rollout installation.
 
 
 **Helm Option** : We invite you to reach to the Charts directory, and follow the commands described. 
+
 **API & UI Options**: We invite you to reach out to our documentation for further details on the process and the commands. 
 Please note that for such a method, a YAML file will be downloaded onto your computer and you will be required to run it accordingly. 
 
