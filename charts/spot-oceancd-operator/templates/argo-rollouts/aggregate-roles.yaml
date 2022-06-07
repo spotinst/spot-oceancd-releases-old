@@ -1,4 +1,4 @@
-{{- if .Values.argo-rollouts.create }}
+{{- if .Values.argoRollouts.create }}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
