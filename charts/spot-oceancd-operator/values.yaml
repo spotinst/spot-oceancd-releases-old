@@ -1,4 +1,4 @@
-argo-rollouts:
+argoRollouts:
 
   # -- (Optional) If create argo-rollouts
   create: true
