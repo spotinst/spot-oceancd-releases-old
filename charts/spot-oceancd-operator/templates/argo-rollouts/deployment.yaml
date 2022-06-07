@@ -61,7 +61,7 @@ spec:
         {{- toYaml .Values.argoRollouts.deployment.nodeSelector | nindent 8 }}
       {{- end }}
       securityContext:
-        {{- toYaml .Values.argo-rollouts.deployment.podSecurityContext | nindent 8 }}
+        {{- toYaml .Values.argoRollouts.deployment.podSecurityContext | nindent 8 }}
       {{- if .Values.argoRollouts.deployment.tolerations }}
       tolerations:
         {{- toYaml .Values.argoRollouts.deployment.tolerations | nindent 8 }}
