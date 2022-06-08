@@ -14,7 +14,7 @@ https://docs.spot.io/ocean-cd/
 ## Operator Installation
 
 Prerequisites:
-- Kubernetes cluster up and running ( Azure,GCP,AWS)
+- Kubernetes cluster up and running (Azure,GCP,AWS)
 - Workstation with the Kubernetes cluster context and kubectl installed
 - Have an installed operator lifecycle manager (‘OLM’)
 - [A Spot API token](https://docs.spot.io/administration/api/create-api-token)
@@ -23,13 +23,13 @@ The Ocean CD Operator detects every applied SpotDeployment, monitors all of your
 
 You may install your operator via API, UI or HELM.
 
-No matter which method you will choose, during the installation, you will be required to update wheter or not your cluster has an already installed Argo Rollout installation.
+No matter which method you will choose, during the installation, you will be required to update whether your cluster has an already installed Argo Rollout installation.
+Indeed Ocean CD recognizes the advantages of Argo rollouts as an engine for CD strategies and uses it accordingly to manage and enable it as a scalable CD product. 
 
 
-**Helm Option** : We invite you to reach to the Charts directory, and follow the commands described. 
+**Helm Option** : We invite you to reach to the "charts/spot-oceancd-operator" directory, and follow the tutorial provided. 
 
-**API & UI Options**: We invite you to reach out to our documentation for further details on the process and the commands. 
-Please note that for such a method, a YAML file will be downloaded onto your computer and you will be required to run it accordingly. 
+**API & UI Options**: We invite you to reach out to [our documentation](https://docs.spot.io/ocean-cd/getting-started/) for further details on the process and the commands.
 
 
 ## Quick Start
@@ -44,7 +44,7 @@ cluster and namespace
 for the selected SpotDeployment.
 
   
-To easily get started with OceanCD, you may make use of the 'examples' section found above. 
+**To easily get started with OceanCD, you may make use of the 'Quick Start & Examples' section found above.**
 Through such files, you will find a series of examples which will accompany you through the process of a simplified and quick Canary Deployment. 
 
 

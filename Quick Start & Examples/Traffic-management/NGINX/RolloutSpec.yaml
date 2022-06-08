@@ -8,8 +8,8 @@ spotDeployment:
 strategy:
   name: Strategy-OceanCD
 traffic:
-  canaryService: rollouts-demo-canary
-  stableService: rollouts-demo-stable
+  canaryService: rollouts-demo-stable
+  stableService: rollouts-demo-canary
   nginx:
     stableIngress: rollouts-demo-ingress-nginx
     additionalIngressAnnotations:
