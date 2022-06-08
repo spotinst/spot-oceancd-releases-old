@@ -1,5 +1,5 @@
 {
-  "rolloutSpec": {
+  "kind": "RolloutSpec",
   "name": "RolloutSpec-OceanCD",
   "spotDeployment": {
     "clusterId": "cluster-name",
@@ -31,4 +31,4 @@
     "action": "abort"
   }
 }
-}
+
