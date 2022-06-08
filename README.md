@@ -31,8 +31,6 @@ Indeed Ocean CD recognizes the advantages of Argo rollouts as an engine for CD s
 
 **API & UI Options**: We invite you to reach out to [our documentation](https://docs.spot.io/ocean-cd/getting-started/) for further details on the process and the commands.
 
-**Please note** that for such a method, a YAML file will be downloaded onto your computer and you will be required to run it accordingly. 
-
 
 ## Quick Start
 
