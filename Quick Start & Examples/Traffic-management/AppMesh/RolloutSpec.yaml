@@ -1,4 +1,3 @@
---
 kind: RolloutSpec
 name: RolloutSpec-OceanCD
 spotDeployment:
@@ -10,7 +9,15 @@ strategy:
 traffic:
   canaryService: rollouts-demo-canary
   stableService: rollouts-demo-stable
-  smi:
-    rootService: rollouts-demo-root
+  appMesh:
+    virtualService:
+      name: ""
+      routes:
+        - ""
+    virtualNodeGroup:
+      canaryVirtualNodeRef:
+        name: ""
+      stableVirtualNodeRef:
+        name: ""
 failurePolicy:
   action: abort
