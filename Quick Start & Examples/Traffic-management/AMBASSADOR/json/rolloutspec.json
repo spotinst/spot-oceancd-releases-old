@@ -1,5 +1,5 @@
 {
-  "rolloutSpec": {
+  "RolloutSpec": {
     "name": "service-rolloutspec",
     "spotDeployment": {
       "clusterId": "cluster-name",

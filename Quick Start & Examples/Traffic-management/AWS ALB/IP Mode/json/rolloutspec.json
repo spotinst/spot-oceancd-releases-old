@@ -1,5 +1,5 @@
 {
-  "rolloutSpec": {
+  "RolloutSpec": {
     "name": "RolloutSpec-OceanCD",
     "spotDeployment": {
       "clusterId": "cluster-name",
