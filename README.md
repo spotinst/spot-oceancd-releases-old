@@ -14,7 +14,7 @@ https://docs.spot.io/ocean-cd/
 ## Operator Installation
 
 Prerequisites:
-- Kubernetes cluster up and running ( Azure,GCP,AWS)
+- Kubernetes cluster up and running (Azure,GCP,AWS)
 - Workstation with the Kubernetes cluster context and kubectl installed
 - Have an installed operator lifecycle manager (‘OLM’)
 - [A Spot API token](https://docs.spot.io/administration/api/create-api-token)
@@ -27,7 +27,7 @@ No matter which method you will choose, during the installation, you will be req
 Indeed Ocean CD recognizes the advantages of Argo rollouts as an engine for CD strategies and uses it accordingly to manage and enable it as a scalable CD product. 
 
 
-**Helm Option** : We invite you to reach to the Charts directory, and follow the tutorial provided. 
+**Helm Option** : We invite you to reach to the "charts/spot-oceancd-operator" directory, and follow the tutorial provided. 
 
 **API & UI Options**: We invite you to reach out to [our documentation](https://docs.spot.io/ocean-cd/getting-started/) for further details on the process and the commands.
 
@@ -44,7 +44,7 @@ cluster and namespace
 for the selected SpotDeployment.
 
   
-To easily get started with OceanCD, you may make use of the 'examples' section found above. 
+**To easily get started with OceanCD, you may make use of the 'Quick Start & Examples' section found above.**
 Through such files, you will find a series of examples which will accompany you through the process of a simplified and quick Canary Deployment. 
 
 
