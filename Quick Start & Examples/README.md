@@ -34,7 +34,7 @@ Make sure to use the canary and stable services you have defined
 
 RolloutSpec can include your traffic manager details. If you decide to make use of a traffic manager, Ocean CD supports many of them. See RolloutSpec examples with traffic manager templates inside the traffic manager folder.
 
-** Please note that all of your services and SpotDeployment YAMLs ought to be applied in the namespace configured in your RolloutSpec.**
+**Please note that all of your services and SpotDeployment YAMLs ought to be applied in the namespace configured in your RolloutSpec.**
 
 5. Perform changes to your SpotDeployment containers spec and Apply.
 
