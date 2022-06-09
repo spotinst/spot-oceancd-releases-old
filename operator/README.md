@@ -1,6 +1,5 @@
 # Operator YAMLs
 
-### Warning
 
 Such files are not for personal purposes. These are used during the operator installation when done via UI. 
 
