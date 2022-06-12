@@ -1,6 +1,7 @@
 # Spot Ocean CD 
 
 
+
 Ocean CD focuses on the most painful aspects of modern application delivery, giving developers the freedom to push code with confidence while DevOps easily maintain governance and SLOs.
 
 Ocean CD provides DevOps and Infrastructure teams with out of the box processes to reimplement and share complex and mission critical pieces of CD across different environments, such as progressive delivery and verification of the software deployments. Service owners are able to promote service changes to production without code or re-inventing deployment strategies. Developers are able to commit with confidence, now that the deployment phases are managed and visible.
@@ -30,7 +31,7 @@ Indeed Ocean CD recognizes the advantages of Argo rollouts as an engine for CD s
 
 **Helm Option** : We invite you to reach to the "charts/spot-oceancd-operator" directory, and follow the tutorial provided. 
 
-**API & UI Options**: We invite you to reach out to [our documentation](https://docs.spot.io/ocean-cd/getting-started/) for further details on the process and the commands.
+**API & UI Options**: We invite you to reach out to [our documentation](https://docs.spot.io/ocean-cd/getting-started/install-operator-using-API-or-helm) for further details on the process and the commands.
 
 
 ## Quick Start
