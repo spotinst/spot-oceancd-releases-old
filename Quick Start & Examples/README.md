@@ -4,7 +4,7 @@
 ```sh
 - Have a running Kubernetes cluster 
 - Have an installed operator lifecycle manager (‘OLM’)
-- An installed Ocean CD operator. 
+- An installed Ocean CD operator. We invite you to reach out to our documentation for further details on all of our options: https://docs.spot.io/ocean-cd/getting-started/install-operator-using-API-or-helm
 ```
 Steps towards your Canary deployment
 
