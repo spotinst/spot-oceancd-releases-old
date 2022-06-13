@@ -46,6 +46,7 @@ cluster and namespace
 for the selected SpotDeployment.
   
 **Note:** Any **first** Apply to your SpotDeployments will not trigger a rollout. Only the creation of the pods will be accomplished.
+
 To trigger a rollout with the entities of your choice, you will need to apply any additional change to the SpotDeployment in question.
 
   
