@@ -14,7 +14,7 @@ Steps towards your Canary deployment
 
 **Note**: Do not forget to update the namespace in which you plan to do the rollouts. 
 
-2. Apply and create your SpotDeployment. **Please note that your first apply will create only the new SpotDeployment pods (can be tracked via the console UI, ‘Workloads’ page). No rollouts will be created**
+2. Apply and create your SpotDeployment. **Please note that your first apply will create only the new SpotDeployment pods (can be tracked via the console UI, ‘Workloads’ page). No rollouts will be created.**
 3. Create Canary and Stable services that will be used to expose your canary and stable pods with the respective traffic. 
 4. Create Ocean CD entities that manage your SpotDeployment rollout logic: Strategy & RolloutSpec. See entities formats that can be used via API inside the entities folder.
 Make sure to use your Spot API token for authorization. 
@@ -36,7 +36,7 @@ RolloutSpec can include your traffic manager details. If you decide to make use 
 
 **Please note that all of your services, traffic managers resources and SpotDeployment YAMLs ought to be applied in the same namespace configured in your RolloutSpec.**
 
-5. Perform changes to your SpotDeployment containers spec and Apply.
+5. Perform changes to your SpotDeployment containers spec and Apply. **This time a new rollout will be created and triggered.**
 
 **You are now all set to get working with Ocean CD!**
    
