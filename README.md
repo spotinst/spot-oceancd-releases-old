@@ -18,7 +18,7 @@ https://docs.spot.io/ocean-cd/
 Prerequisites:
 - Kubernetes cluster up and running (Azure,GCP,AWS)
 - Workstation with the Kubernetes cluster context and kubectl installed
-- Have an installed operator lifecycle manager (‘OLM’)
+- Have an installed operator lifecycle manager [(‘OLM’)](https://github.com/operator-framework/operator-lifecycle-manager/releases)
 - [A Spot API token](https://docs.spot.io/administration/api/create-api-token)
 
 The Ocean CD Operator detects every applied SpotDeployment, monitors all of your resources, and manages rollouts based on the SaaS logic. Whenever the SpotDeployment is applied, the SaaS will trigger a rollout. 
@@ -47,6 +47,7 @@ for the selected SpotDeployment.
   
 **Important Note:** Any **first** Apply to your SpotDeployments will not trigger a rollout. 
 Only the creation of the pods will be accomplished. To trigger a rollout with the entities of your choice, you will need to apply any additional change to the SpotDeployment in question.
+
 
   
 **To easily get started with OceanCD, you may make use of the 'Quick Start & Examples' section found above.**
