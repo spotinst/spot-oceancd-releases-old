@@ -5,4 +5,4 @@
 # the repo. Unless a later match takes precedence,
 # "sig-reviewers-fe-infra" team members will be requested for
 # review when someone opens a pull request.
-*       @spotinst/sig-reviewers
+*       @spotinst/oceancd-admins
